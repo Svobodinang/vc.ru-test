@@ -12,7 +12,7 @@
   height: 9px;
   border-radius: 8px;
   cursor: pointer;
-  background: -webkit-linear-gradient(left, var(--color-light-pink) 0%, var(--color-pink) 30%, var(--color-gray) 30%);
+  background: -webkit-linear-gradient(left, var(--color-light-pink) 0%, var(--color-pink) 0%, var(--color-gray) 0%);
 }
 
 .input-range input::-webkit-slider-thumb {
