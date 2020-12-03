@@ -19,7 +19,6 @@
 }
 
 .root-input-range__popup-group {
-  content: '876876876';
   display: none;
   position: absolute;
   transform: translateX(0);

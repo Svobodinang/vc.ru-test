@@ -5,7 +5,7 @@ class UI_InputRange {
     this.cost = 0
   }
 
-  changeInput() {
+  onInput() {
     const input = ROOT_UI_INPUTRANGE.querySelector('.root-input-range__input')
     let inputWidth = input.clientWidth
     const popupGroup = ROOT_UI_INPUTRANGE.querySelector('.root-input-range__popup-group')
@@ -34,11 +34,16 @@ class UI_InputRange {
 
   }
 
+  onChange() {
+    localStorageUtil.updateStatistic(+this.cost)
+    info.rerender()
+  }
+
   render() {
     let htmlInput = `
           <span class="root-input-group__span">0 ₽</span>
           <div class="root-input-range__input-group">
-            <input class="root-input-range__input" type="range" min="0" max="50000" step="1" value="0" oninput="ui_inputRange.changeInput()" onchange="selfSaving.render()">
+            <input class="root-input-range__input" type="range" min="0" max="50000" step="1" value="0" oninput="ui_inputRange.onInput()" onchange="ui_inputRange.onChange()">
             <div class="root-input-range__popup-group">
               <span class="root-input-range__popup" id="inputPopup">0 ₽</span>
             </div>
