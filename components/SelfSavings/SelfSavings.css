@@ -1,0 +1,35 @@
+.self-savings {
+  display: none;
+}
+
+.self-savings__title {
+  margin-bottom: 1.8rem;
+}
+
+.self-savings__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.self-savings__coins {
+  min-height: 56px;
+}
+
+.self-savings__forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.self-savings__coins,
+.self-savings__cost {
+  margin-bottom: 0.6rem;
+}
+
+.self-savings__cost,
+.self-savings__help-text {
+  text-align: center;
+}
