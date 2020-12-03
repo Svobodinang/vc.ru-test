@@ -10,12 +10,22 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 input:focus {
   outline: none;
 }
 
-html {
-  font-size: 16px;
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 body {
@@ -30,9 +40,13 @@ body {
 }
 
 section {
-  width: 50%;
+  width: 55%;
   background-color: white;
   padding: 1rem 1.5rem;
+}
+
+section:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -42,3 +56,11 @@ h2 {
 p {
   font-size: 1rem;
 }
+
+.accent {
+  font-size: 25px;
+  color: var(--color-pink);
+  font-weight: bold;
+}
+
+@media screen and () {}
