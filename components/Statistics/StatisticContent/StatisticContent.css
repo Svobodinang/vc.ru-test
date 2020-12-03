@@ -1,0 +1,69 @@
+.statistic-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height linear 0.8s;
+}
+
+.statistics__mean {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.statistics__mean-summ {
+  position: relative;
+  background: var(--color-very-light-pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 0.6rem;
+}
+
+.statistics__mean-summ img {
+  margin-bottom: 1rem;
+}
+
+.statistics__mean-summ p {
+  font-weight: bold;
+  font-size: 25px;
+  color: var(--color-pink);
+  text-align: center;
+  bottom: 0;
+}
+
+.statisctics__percents {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 1rem;
+}
+
+.statistics__percent-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.statistics__diagram {
+  margin-bottom: 0.6rem;
+  transform: rotate(-90deg);
+}
+
+.statistics__percents-title {
+  font-weight: bold;
+  color: var(--color-pink);
+  font-size: 25px;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.statistics__percents-text {
+  text-align: center;
+  max-width: 12rem;
+}

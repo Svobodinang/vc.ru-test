@@ -18,9 +18,9 @@
 
 .self-savings__forecast {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   grid-gap: 2rem;
-  align-items: center;
+  align-items: top;
   margin-bottom: 1rem;
 }
 
@@ -32,4 +32,64 @@
 .self-savings__cost,
 .self-savings__help-text {
   text-align: center;
+}
+
+.self-savings__help-text-img {
+  vertical-align: bottom;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* popup */
+
+.self-savings__help-text-popup-point {
+  position: relative;
+  display: inline-block;
+  width: 0;
+}
+
+.self-savings__help-text-popup {
+  content: attr(value);
+  position: absolute;
+  display: none;
+  background: var(--color-pink);
+  color: white;
+  bottom: 28px;
+  left: -200px;
+  width: 300px;
+  text-align: start;
+  padding: 0.7rem;
+  border-radius: 5px;
+  z-index: 999;
+  font-size: 0.9rem;
+}
+
+.self-savings__help-text-popup-point::before {
+  content: '';
+  display: none;
+  position: absolute;
+  bottom: 24px;
+  left: -18px;
+  background: var(--color-pink);
+  color: white;
+  height: 8px;
+  width: 8px;
+  transform: rotate(45deg);
+}
+
+.self-savings__help-text-popup-block {
+  display: inline-block;
+  outline: none;
+}
+
+.self-savings__help-text-popup-block a {
+  color: white;
+}
+
+.self-savings__help-text-popup-block:focus .self-savings__help-text-popup-point::before,
+.self-savings__help-text-popup-block:focus .self-savings__help-text-popup-point .self-savings__help-text-popup,
+.self-savings__help-text-popup-block:focus-within .self-savings__help-text-popup-point::before,
+.self-savings__help-text-popup-block:focus-within .self-savings__help-text-popup-point .self-savings__help-text-popup {
+  display: block;
 }

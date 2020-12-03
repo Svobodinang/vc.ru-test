@@ -3,6 +3,8 @@
   --color-light-gray: #f2f2f2;
   --color-pink: #FE4D4A;
   --color-light-pink: #FF9796;
+  --color-bg-pink: #FEEBEF;
+  --color-very-light-pink: #FFF6F8;
   --color-gray: #E2E2E2;
 }
 
@@ -40,13 +42,9 @@ body {
 }
 
 section {
-  width: 55%;
+  width: 700px;
   background-color: white;
   padding: 1rem 1.5rem;
-}
-
-section:not(:last-child) {
-  margin-bottom: 1rem;
 }
 
 h2 {
@@ -63,4 +61,26 @@ p {
   font-weight: bold;
 }
 
-@media screen and () {}
+@media screen and (max-width: 800px) {
+  section {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section {
+    width: 100%;
+  }
+}
