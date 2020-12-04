@@ -4,7 +4,9 @@ class SelfSaving {
     this.percentAlfa = 71.21 / 3
     this.years = 3
     this.coinWidth = 55
+    this.popupWidth = 300
     this.coinStep = this.calcBenefit(this.percentAlfa, ui_inputRange.maxValue) / 10
+    window.addEventListener('resize', this.setPopupSize);
   }
   render() {
     ROOT_SELFSAVINGS.style.display = 'block'
@@ -30,8 +32,8 @@ class SelfSaving {
         <p class="accent self-savings__cost">~${prettify(mineBenefit.toFixed())} ₽</p>
         <div class="self-savings__help-text">
           если складывать под матрас 
-          <div class="self-savings__help-text-popup-block" tabindex="0">
-          <img class="self-savings__help-text-img" src="img/question.svg">
+          <div class="self-savings__help-text-popup-block">
+          <img class="self-savings__help-text-img" src="img/question.svg" tabindex="0">
           <div class="self-savings__help-text-popup-point">
             <div class="self-savings__help-text-popup">
               <span>В этом мало смысла — такие 
@@ -50,8 +52,8 @@ class SelfSaving {
       <p class="accent self-savings__cost">~${prettify(depositBenefit.toFixed())} ₽</p>
       <div class="self-savings__help-text">
         если откладывать на депозит 
-        <div class="self-savings__help-text-popup-block" tabindex="0">
-          <img class="self-savings__help-text-img" src="img/question.svg">
+        <div class="self-savings__help-text-popup-block">
+          <img class="self-savings__help-text-img" src="img/question.svg" tabindex="0">
           <div class="self-savings__help-text-popup-point">
             <div class="self-savings__help-text-popup">
               <span>Ставки по вкладам различны в разных
@@ -69,12 +71,12 @@ class SelfSaving {
     let alfaHtml = `
       <div class="self-savings__block">
       <div class="self-savings__coins">${alfaCoinsHtml}</div>
-      <p class="accent self-savings__cost">~${prettify(alfaBenefit.toFixed())} ₽</p>
-      <div class="self-savings__help-text">
+      <p class="accent self-savings__cost">до ~${prettify(alfaBenefit.toFixed())} ₽</p>
+      <div class="self-savings__help-text self-savings__help-text-alfa">
         если инвестировать в ПИФ
         «Альфа-Капитала» 
-        <div class="self-savings__help-text-popup-block" tabindex="0">
-          <img class="self-savings__help-text-img" src="img/question.svg">
+        <div class="self-savings__help-text-popup-block">
+          <img class="self-savings__help-text-img" src="img/question.svg" tabindex="0">
           <div class="self-savings__help-text-popup-point">
             <div class="self-savings__help-text-popup">
               <span>Вы становитесь инвестором набора 
@@ -101,6 +103,7 @@ class SelfSaving {
     `
 
     ROOT_SELFSAVINGS.innerHTML = htmlText + forecastHtml
+    this.setPopupSize()
   }
 
   calcBenefit(percent, summ) {
@@ -125,6 +128,28 @@ class SelfSaving {
       `
     }
     return html
+  }
+
+  setPopupSize() {
+    let popupPoints = document.getElementsByClassName('self-savings__help-text-popup-point')
+    let infoWidth = ROOT_INFO.clientWidth
+    let infoRightEnd = ROOT_INFO.getBoundingClientRect().right
+    let maxPopupWidth = infoWidth > 400 ? (infoWidth / 2) - 56 : infoWidth
+
+    Array.from(popupPoints).forEach(popupPoint => {
+      let popup = popupPoint.querySelector('.self-savings__help-text-popup')
+      let popupWidth = maxPopupWidth < selfSaving.popupWidth ? maxPopupWidth - 10 : this.popupWidth
+      popup.style.width = `${popupWidth}px`
+
+      let popupPointRightEnd = popupPoint.getBoundingClientRect().right
+      let popupRightEnd = popupPointRightEnd + popupWidth
+
+      if (popupRightEnd > infoRightEnd) {
+        popup.style.left = `-${30 + (popupRightEnd - infoRightEnd)}px`
+      } else {
+        popup.style.left = '-30px'
+      }
+    })
   }
 }
 

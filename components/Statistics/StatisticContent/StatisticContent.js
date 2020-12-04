@@ -10,16 +10,17 @@ class StatisticsContent {
     if (statistics.open) {
       ROOT_STATISTICSCONTENT.style['max-height'] = '1000px'
       setTimeout(() => {
-        ROOT_STATISTICSCONTENT.scrollIntoView({
-          behavior: 'smooth'
+        ROOT_STATISTICS.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
         })
       }, 500)
     } else {
-      console.log(97987987);
       ROOT_STATISTICSCONTENT.style['max-height'] = '0'
       setTimeout(() => {
-        ROOT_STATISTICSCONTENT.scrollIntoView({
-          behavior: 'smooth'
+        ROOT_STATISTICS.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
         })
       }, 500)
     }

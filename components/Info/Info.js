@@ -20,7 +20,7 @@ class Info {
     ROOT_INFO.style.padding = '1rem 1.5rem'
     ROOT_INFO.style['max-height'] = '2000px'
     setTimeout(() => {
-      ROOT_SELFSAVINGS.scrollIntoView({
+      ROOT_INFO.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       })

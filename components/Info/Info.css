@@ -1,6 +1,6 @@
 .info {
   max-height: 0;
-  overflow: hidden;
-  transition: max-height linear 1s;
+  overflow-y: hidden;
+  transition: max-height linear 0.8s;
   padding: 0;
 }

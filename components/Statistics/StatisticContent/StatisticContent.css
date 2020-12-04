@@ -1,7 +1,7 @@
 .statistic-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height linear 0.8s;
+  transition: max-height linear 0.7s;
 }
 
 .statistics__mean {
