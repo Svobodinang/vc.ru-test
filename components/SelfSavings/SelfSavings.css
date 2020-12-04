@@ -3,7 +3,7 @@
 }
 
 .self-savings__title {
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .self-savings__block {
@@ -29,9 +29,16 @@
   margin-bottom: 0.6rem;
 }
 
-.self-savings__cost,
-.self-savings__help-text {
+.self-savings__cost {
   text-align: center;
+}
+
+.self-savings__help-text {
+  width: 9rem;
+}
+
+.self-savings__help-text-alfa {
+  width: 13rem;
 }
 
 .self-savings__help-text-img {
@@ -52,22 +59,21 @@
 .self-savings__help-text-popup {
   content: attr(value);
   position: absolute;
-  display: none;
+  opacity: 0;
+  z-index: -1;
   background: var(--color-pink);
   color: white;
   bottom: 28px;
-  left: -200px;
-  width: 300px;
   text-align: start;
   padding: 0.7rem;
   border-radius: 5px;
-  z-index: 999;
   font-size: 0.9rem;
 }
 
 .self-savings__help-text-popup-point::before {
   content: '';
-  display: none;
+  opacity: 0;
+  z-index: -1;
   position: absolute;
   bottom: 24px;
   left: -18px;
@@ -87,9 +93,10 @@
   color: white;
 }
 
-.self-savings__help-text-popup-block:focus .self-savings__help-text-popup-point::before,
-.self-savings__help-text-popup-block:focus .self-savings__help-text-popup-point .self-savings__help-text-popup,
-.self-savings__help-text-popup-block:focus-within .self-savings__help-text-popup-point::before,
-.self-savings__help-text-popup-block:focus-within .self-savings__help-text-popup-point .self-savings__help-text-popup {
-  display: block;
+.self-savings__help-text-img:focus+.self-savings__help-text-popup-point::before,
+.self-savings__help-text-img:focus+.self-savings__help-text-popup-point .self-savings__help-text-popup,
+.self-savings__help-text-img:focus-within+.self-savings__help-text-popup-point::before,
+.self-savings__help-text-img:focus-within+.self-savings__help-text-popup-point .self-savings__help-text-popup {
+  opacity: 1;
+  z-index: 999;
 }

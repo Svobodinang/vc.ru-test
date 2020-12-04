@@ -21,13 +21,13 @@ class StatisticsTitle {
     statisticsContent.changeView()
     setTimeout(() => {
       this.render()
-    }, 800)
+    }, 300)
   }
 
   render() {
     let htmlTitle = `
-          <div class="statistics__title">
-            <a onclick="statisticsTitle.changeView()">${this.titleTextHtml}</a>
+          <div onclick="statisticsTitle.changeView()" class="statistics__title">
+            <a>${this.titleTextHtml}</a>
           </div>
         `
 
